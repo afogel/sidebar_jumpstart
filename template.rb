@@ -35,21 +35,23 @@ end
 
 def add_gems
   add_gem 'cssbundling-rails'
-  add_gem 'devise', '~> 4.9'
-  add_gem 'friendly_id', '~> 5.4'
+  add_gem 'devise'
+  add_gem 'friendly_id'
   add_gem 'jsbundling-rails'
   add_gem 'madmin'
-  add_gem 'name_of_person', '~> 1.1'
-  add_gem 'noticed', '~> 1.4'
-  add_gem 'omniauth-facebook', '~> 8.0'
-  add_gem 'omniauth-github', '~> 2.0'
-  add_gem 'omniauth-twitter', '~> 1.4'
-  add_gem 'pretender', '~> 0.3.4'
-  add_gem 'pundit', '~> 2.1'
-  add_gem 'sidekiq', '~> 6.2'
-  add_gem 'sitemap_generator', '~> 6.1'
+  add_gem 'name_of_person'
+  add_gem 'noticed'
+  add_gem 'omniauth-facebook'
+  add_gem 'omniauth-github'
+  add_gem 'omniauth-twitter'
+  add_gem 'pretender'
+  add_gem 'pundit'
+  add_gem 'sidekiq'
+  add_gem 'sitemap_generator'
   add_gem 'whenever', require: false
   add_gem 'responders', github: 'heartcombo/responders', branch: 'main'
+  add_gem "view_component"
+  add_gem 'image_processing'
 end
 
 def set_application_name
