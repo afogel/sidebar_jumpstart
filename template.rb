@@ -92,7 +92,7 @@ def default_to_esbuild
 end
 
 def add_javascript
-  run "yarn add local-time esbuild-rails trix @hotwired/stimulus @hotwired/turbo-rails @rails/activestorage @rails/ujs @rails/request.js chokidar"
+  run "yarn add local-time esbuild-rails trix @hotwired/stimulus @hotwired/turbo-rails @rails/activestorage @rails/ujs @rails/request.js chokidar tailwindcss-stimulus-components @tailwindcss/aspect-ratio @tailwindcss/forms @tailwindcss/typography"
 end
 
 def copy_templates
@@ -100,9 +100,11 @@ def copy_templates
   remove_file "app/javascript/application.js"
   remove_file "app/javascript/controllers/index.js"
   remove_file "Procfile.dev"
+  remove_file "tailwind.config.js"
 
   copy_file "Procfile"
   copy_file "Procfile.dev"
+  copy_file "tailwind.config.js"
   copy_file ".foreman"
   copy_file "esbuild.config.mjs"
   copy_file "app/javascript/application.js"
@@ -177,12 +179,12 @@ def add_sitemap
   rails_command "sitemap:install"
 end
 
-def add_bootstrap
-  rails_command "css:install:bootstrap"
+def add_tailwind
+  rails_command "css:install:tailwind"
 end
 
 def add_announcements_css
-  insert_into_file 'app/assets/stylesheets/application.bootstrap.scss', '@import "jumpstart/announcements";'
+  insert_into_file 'app/assets/stylesheets/application.tailwind.css', '@import "jumpstart/announcements";'
 end
 
 def add_esbuild_script
@@ -227,7 +229,7 @@ after_bundle do
   add_multiple_authentication
   add_sidekiq
   add_friendly_id
-  add_bootstrap
+  add_tailwind
   add_whenever
   add_sitemap
   add_announcements_css
