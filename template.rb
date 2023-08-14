@@ -94,7 +94,7 @@ def default_to_esbuild
 end
 
 def add_javascript
-  run "yarn add local-time esbuild-rails trix @hotwired/stimulus @hotwired/turbo-rails @rails/activestorage @rails/ujs @rails/request.js chokidar tailwindcss-stimulus-components @tailwindcss/aspect-ratio @tailwindcss/forms @tailwindcss/typography"
+  run "yarn add local-time esbuild-rails trix @hotwired/stimulus @hotwired/turbo-rails @rails/activestorage @rails/ujs @rails/request.js chokidar tailwindcss-stimulus-components @tailwindcss/aspect-ratio @tailwindcss/forms @tailwindcss/typography daisyui@latest postcss postcss-import"
 end
 
 def copy_templates
@@ -107,6 +107,7 @@ def copy_templates
   copy_file "Procfile"
   copy_file "Procfile.dev"
   copy_file "tailwind.config.js"
+  copy_file "postcss.config.js"
   copy_file ".foreman"
   copy_file "esbuild.config.mjs"
   copy_file "app/javascript/application.js"
